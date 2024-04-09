@@ -1,0 +1,10 @@
+sphinx
+sphinx-autobuild
+sphinx-rtd-theme
+sphinx-material
+sphinx-multiversion
+sphinxcontrib-openapi
+sphinxcontrib-plantuml
+sphinxcontrib-mermaid
+myst-parser
+pillow
