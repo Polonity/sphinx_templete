@@ -30,15 +30,20 @@ cp -fr how_to_write_documentation.md ../
   - markdown で記述
   - marmaid や plantuml で図を描画可能。但し、sphinx の拡張機能で読み込めるように記載が必要。
     __記載例__
+    
     __plantuml__
+    
     ```md
-    ```{eval-rst}
-    .. uml::
-
-        A -> B: request
-        return response
+        ```{eval-rst}
+        .. uml::
+    
+            A -> B: request
+            return response
+        ```
     ```
-    ```
+ 
+    ※ plantuml は github の README では表示されない。
+    
     ```plantuml
     @startuml
         A -> B: request
@@ -47,22 +52,23 @@ cp -fr how_to_write_documentation.md ../
     ```
 
     __mermaid__
+    
     ```md    
-    ```{eval-rst}
-    .. mermaid::
-
-        sequenceDiagram
-            participant Alice
-            participant Bob
-            Alice->John: Hello John, how are you?
-            loop Healthcheck
-                John->John: Fight against hypochondria
-            end
-            Note right of John: Rational thoughts <br/>prevail...
-            John-->Alice: Great!
-            John->Bob: How about you?
-            Bob-->John: Jolly good!
-    ```
+        ```{eval-rst}
+        .. mermaid::
+    
+            sequenceDiagram
+                participant Alice
+                participant Bob
+                Alice->John: Hello John, how are you?
+                loop Healthcheck
+                    John->John: Fight against hypochondria
+                end
+                Note right of John: Rational thoughts <br/>prevail...
+                John-->Alice: Great!
+                John->Bob: How about you?
+                Bob-->John: Jolly good!
+        ```
 
     ```
 
@@ -82,6 +88,7 @@ cp -fr how_to_write_documentation.md ../
 
 - 関数の外部仕様
   - 関数冒頭に Google スタイルの docstring を仕込むと、それを自動的にドキュメント化。
+
     __記載例__
 
     ```python
@@ -103,6 +110,7 @@ cp -fr how_to_write_documentation.md ../
 
 - クラスの外部仕様
   - クラス冒頭に Google スタイルの docstring を仕込むと、それを自動的にドキュメント化。
+
     __記載例__
 
     ```python
@@ -116,6 +124,7 @@ cp -fr how_to_write_documentation.md ../
 
 - API gateway の API仕様
   - OpenAPI 3.0 で AWS API Gateway の API 仕様をエクスポートし、それをドキュメント化。
+
     __記載例__
 
     ```rest
@@ -212,6 +221,7 @@ sys.path.insert(0, os.path.abspath('../..'))
 #### 自動収集
 
 以下のコマンドでプロジェクト内の python モジュールを自動収集する。
+
 ⚠️ `docs/source/auto_generated_*` はスクリプトで自動生成されるため、手動で編集しないこと。
 
 ```sh
